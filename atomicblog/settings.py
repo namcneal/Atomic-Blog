@@ -42,6 +42,10 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    #https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -117,6 +121,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+# The next two lines are added for Heroku compatbility 
+# https://simpleisbetterthancomplex.com/tutorial/2016/08/09/how-to-deploy-django-applications-on-heroku.html
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -127,4 +136,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static_files')
+# The places where the collected static files are sent.
+# Independent of the one above
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
