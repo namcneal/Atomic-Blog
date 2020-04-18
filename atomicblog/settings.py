@@ -25,7 +25,7 @@ SECRET_KEY = '(2=1$5p$o@=#&44p=n3ibpb#-xvhm=h24^*%_dwos!b(d0t%*0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["atomicblog.herokuapp.com"]
 
 
 # Application definition
