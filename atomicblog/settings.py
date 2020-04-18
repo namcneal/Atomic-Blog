@@ -124,7 +124,7 @@ USE_TZ = True
 # The next two lines are added for Heroku compatbility 
 # https://simpleisbetterthancomplex.com/tutorial/2016/08/09/how-to-deploy-django-applications-on-heroku.html
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Static files (CSS, JavaScript, Images)
