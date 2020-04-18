@@ -1,0 +1,7 @@
+from django import template
+from django.template.loader_tags import do_include
+from django.template.base import TemplateSyntaxError, Token
+
+
+register = template.Library()
+
