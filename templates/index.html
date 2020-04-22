@@ -1,20 +1,14 @@
 {% extends "base.html" %} 
 {% block content %}
 
-Hi
-
-<div id="main">
-    <div id="left-box">
-    	<a href="test-article">
-    		Test Article Link
-    	</a>
-    </div>
-    <div id="right-box">
-        <div id="right-top-box">
-        </div>
-        <div id="right-bottom-box">
-        </div>
+<a id="featured-article-link" href="test-article">
+    <div id="featured-article" class="thumbnail">
+        <img class="img-fluid" src="static/images/The Fair.jpg">
+        <div class="text-overlay caption text-center">
+        	The Article Title Goes Somewhere Inside Here? <br> I really don't know yet. <br>
+        	And I'm not sure where to put the subheading either.
+    	</div>
     </div>
 
-</div>
+</a> 
 {% endblock %}

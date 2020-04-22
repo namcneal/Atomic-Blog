@@ -3,12 +3,11 @@
 
 {% block content %}
 
-<div id="article">
+<div class="container id="article">
 
 	{% with "articles/"|add:article.slug|add:".html" as template %}
 		{% include template %}
 	{% endwith %}
 </div>
 
-<script src="{% static 'js/header.js' %}"></script>
 {% endblock %}

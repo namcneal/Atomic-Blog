@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(2=1$5p$o@=#&44p=n3ibpb#-xvhm=h24^*%_dwos!b(d0t%*0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["atomicblog.herokuapp.com"]
+if not DEBUG:
+	ALLOWED_HOSTS = ["atomicblog.herokuapp.com"]
+else:
+    ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -75,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'atomicblog.wsgi.application'
+# WSGI_APPLICATION = 'atomicblog.wsgi.application'
 
 
 # Database
