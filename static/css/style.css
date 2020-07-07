@@ -1,5 +1,6 @@
 body{
 	background: #fcfcf3;
+	/*background: #1E1817;*/
 }
 
 /* Setting the Navbar color*/
@@ -7,42 +8,45 @@ body{
 	background-color: #261f1d;
 }
 
-/* Allowing the Navbar to slide up and down*/
-.navbar {
-    transition: top 0.5s ease;
+/* Styling the logo font*/
+.navbar-brand{
+	color: white;
+	font-family: 'Zilla Slab', serif;
+	font-size: 1.3em;
+	text-decoration: none;
+	padding: 0.5em 0.5em;
+
 }
-.navbar-hide {
-    top: -70px;
+.navbar-custom{
+	padding: 0 ;
+}
+
+#logo{
+	/* The logo size. This is scaled up for larger screens*/
+	width: 50px;
+	padding-right: 0.5em;
 }
 
 
-/* Sizing the Navbar for phone screens*/
-	.brand{
-		width: 100%;
-	}
-	.navbar-brand{
-		padding: 0;
-		margin-top: 5px;
-	}
-	/* The logo height. This is scaled up for larger screens*/
-	#logo{
-		width: 200px;
-	}
+/*** Styling the navbar links across the top of the page ***/
+.navbar-nav{
+	margin: 0 1.2em;
+}
 
-	.navbar-nav{
-		margin: 0 auto;
-	}
-
-
-/* Styling the navbar links*/
-.navbar-nav a{
-	width: 50%;
+.nav-item.nav-link{
+	width: 100%;
 	margin: 0 auto;
 
 	text-align: center;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-family: 'Sawarabi Gothic', sans-serif;
-	color: white;
+	color: white !important;
+	padding: 0.5em 0.5em !important;
+	margin: 0 0.25em;
+}
+
+.search{
+	font-size: 0.7em;
 }
 
 /* All of this for the highlighted-hover animation on the links*/
@@ -70,19 +74,13 @@ body{
 		background: #b77d5c;
 	}
 
-.active{
-	text-decoration: bold;
-}
 
-.no-border{
-    border: 0;
-    outline: 0;
-    border-radius: 0;	
+/*************** Allowing the Navbar to slide up and down***************/
+.navbar {
+    transition: top 0.5s ease;
 }
-
-.form-control{
-    border-bottom: 1px solid #fffff7;
-    font-family: 'Sawarabi Gothic', sans-serif;
+.navbar-hide {
+    top: -70px;
 }
 
 /******************** Homepage **********************/
@@ -96,7 +94,7 @@ body{
 
 .img-fluid{
 	width: 100%;
-	max-width: 1200px;
+	/*max-width: 1200px;*/
 }
 
 .text-overlay{
@@ -122,7 +120,7 @@ body{
 /************************* Styling posts ***************************/
 #title, #hook{
 	text-align: center;
-	font-family: 'Sawarabi Gothic', sans-serif;
+	font-family: 'Sawarabi Mincho', serif;
 }
 
 #hook{
@@ -135,9 +133,10 @@ body{
 	width: 90%;
 	margin: 0 auto;
 
-	font-size: 18px;
+	font-size: 16x;
 	line-height: 150%;
-	font-family: 'Zilla Slab', serif;	
+	font-family: 'Spectral', serif;
+	font-weight: 500;
 	text-align: justify;
 }
 
@@ -148,15 +147,24 @@ No media query since this is the default in Bootstrap*/
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
+	.navbar-custom{
+		padding: 0 ;
+	}
 	.navbar-brand{
-		padding: 0;
-		margin-top: 5px;
+		padding: 0.5em 1em;
+	}
+
+	.navbar-brand span{
+		font-size: 1.3em;
 	}
 
 	#logo{
-		height: 60px;
+		height: 55px;
 		width: auto;
+		padding-right: 0.8em;
 	}
+
+
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -164,7 +172,12 @@ No media query since this is the default in Bootstrap*/
 
 	/* Increase the size of the logo*/
 	#logo{
-		height:70px;
+		height: 60px;
+		width: auto;
+	}
+
+	.navbar-brand span{
+		font-size: 1.4em;
 	}
 
 	/* Make the Navbar go up higher to compensate for its increased size*/
@@ -175,60 +188,71 @@ No media query since this is the default in Bootstrap*/
 
 /*Medium-Large devices (Smaller desktops, 992px and up)*/
 @media (min-width: 992px) {
+	/* Increase the size of the logo*/
+	#logo{
+		height: 90px;
+		width: auto;
+	}
+
+	.navbar-brand span{
+		font-size: 2em;
+	}
 }
 
 /* Most desktops should be larger than this.**/ 
 /*Large devices (Desktops, 1200px and up)*/
 @media (min-width: 1200px) {
 
-	/*We don't need the logo to take up the full width anymore*/
-	.brand{
+	/* Make the Navbar only take up part of the space*/
+	.navbar-custom{
+		margin: 0 auto;
+		padding: 0.5em 0;
+	}
+
+	/* Increase the size of the logo*/
+	#logo{
+		height: 60px;
 		width: auto;
 	}
 
-	/* Make the Navbar only take up part of the space*/
-	.navbar-custom{
-		width: 90%;
-		margin: 0 auto;
-		padding-top: 5px;
-		border-radius: 0px 0px 10px 10px
+	.navbar-brand span{
+		font-size: 1.6em;
 	}
 
-	/* Have the navbar links take up the remaining space*/
-	.navbar-nav{
-		margin: 0 1.2em;
-	}
-	.nav-item.nav-link{
-		padding: 0.5em 0.5em !important;
-		margin: 0 0.25em;
-	}
 
 	/* Center the image and shrink it from 100% */
 	/* Also detach it from the navbar */
 	#featured-article{
 		margin: 0 auto;
 		max-height: 600px;
-		width: 90%;
+		/*width: 90%;*/
 		overflow:hidden;	
 		
-		margin-top: 5px;
-		border-radius: 10px;
+		margin-top: 0.5em;
 
 		position: relative;
 		z-index: 1;
 	}
 
 	.img-fluid{
-		max-width: 5000px
+		max-width: 5000px;
+		top: 30em;
 	}
 }
 
 @media (min-width: 1380px) {
 	.navbar-nav{
-		margin: 0 2em;
+		margin: 0 4em;
+	}
+
+	.navbar-brand span{
+		font-size: 1.4em;
+		vertical-align: middle;
+
 	}
 
 	.nav-item.nav-link{
+		font-size:1.2em;
 		padding: 0.5em 1em !important;
 		margin: 0 0.5em;
 	}

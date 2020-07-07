@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+
+
+.flexbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search {
+  padding: 1em 0;
+}
+
+
+.search > div {
+  display: inline-block;
+  position: relative;
+}
+
+.search > div:after {
+  content: "";
+  background: white;
+  width: 4px;
+  height: 12px;
+  position: absolute;
+  top: 18px;
+  right: -4px;
+  transform: rotate(128deg);
+  /*box-shadow: 1px 0 #0091c2;*/
+}
+
+.search > div > input {
+  color: white;
+  background: transparent;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border: solid 2px white;
+  outline: none;
+  border-radius: 35px;
+  /*box-shadow: 0 1px #0091c2;*/
+  transition: width 0.5s;
+}
+
+.search > div > input::placeholder {
+  color: #efefef;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus,
+.search > div > input:not(:placeholder-shown) {
+  width: 250px;
+
+}
+
+
+.search > div > input:hover::placeholder {
+  opacity: 1;
+}
+
+.search > div > input:hover,
+.search > div > input:not(:placeholder-shown) {
+  width: 250px;
+  border: solid 2px white;
+}
+
+
+@media (min-width: 1380px) {
+.search > div:after {
+  content: "";
+  background: white;
+  width: 4px;
+  height: 12px;
+  position: absolute;
+  top: 20px;
+  right: -4px;
+  transform: rotate(128deg);
+  /*box-shadow: 1px 0 #0091c2;*/
+
+    margin-left: 2em;
+
+}
+
+.search > div > input {
+  color: white;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border: solid 3px white;
+  outline: none;
+  border-radius: 35px;
+  /*box-shadow: 0 1px #0091c2;*/
+  transition: width 0.5s;
+
+  font-size: 1.3em;
+  margin-left: 1em;
+}
+
+}

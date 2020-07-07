@@ -1,0 +1,11 @@
+
+/*.article-entry{
+	max-height: 100px;
+}*/
+
+
+.img-thumbnail{
+	width: 50px;
+	height: auto;
+	border-radius: 5px;
+}

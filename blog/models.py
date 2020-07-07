@@ -14,6 +14,7 @@ class Article(models.Model):
 	updated_on = models.DateTimeField(auto_now_add=True)
 	status     = models.IntegerField(choices=STATUS, default=0)
 
+	field      = models.CharField(max_length=20, default="") # Values: phys, math, prog
 	title      = models.CharField(max_length=200, unique=True)
 	subtitle   = models.CharField(max_length=400, unique=False)
 

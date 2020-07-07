@@ -1,0 +1,34 @@
+{% extends "base.html" %} 
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+<div class="article-listing container-fluid"> 
+
+{% for article in articles %}
+<!-- The | safe should be kept in case titles use html for text decoration-->
+<div class="d-flex article-entry pt-3">
+
+   	<div class="thumb">
+	   	{% with "images/articles/thumbnails/"|add:article.slug|add:".png" as img_src %}
+			<img class="img-fluid" src="{% static img_src %}">
+		{% endwith %}
+	</div>
+
+	<div class="text">
+		<h2>{{article.title | safe}}</h2>
+		{{article.subtitle | safe}}
+	</div>
+
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

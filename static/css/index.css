@@ -1,0 +1,93 @@
+
+/******************** Homepage **********************/
+
+#featured-article{
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow:hidden;	
+}
+
+.img-fluid{
+	width: 100%;
+	/*max-width: 1200px;*/
+}
+
+.text-overlay{
+/*	position:absolute;
+	bottom: 0;
+	left: 0;*/
+
+	background-color: rgba(0, 0, 0,0.8);
+	padding: 1em 1em;
+	margin: 0 auto;
+
+}
+
+.text-overlay #title{
+	text-decoration: none;
+	font-size: 1.2em;
+	font-family: 'Sawarabi Mincho', serif;
+	color: white;
+}
+
+.text-overlay #subtitle{
+	text-decoration: none;
+	font-size: 0.6em;
+	font-family: 'Sawarabi Mincho', serif;
+	color: white;
+}
+
+#main-article-link:hover{
+	text-decoration: none;
+}
+
+
+
+/******************* Media Queries for Larger Screens *****************/
+/*Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap*/
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*Medium-Large devices (Smaller desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/* Most desktops should be larger than this.**/ 
+/*Large devices (Desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+	/* Center the image and shrink it from 100% */
+	/* Also detach it from the navbar */
+	#featured-article{
+		margin: 0 auto;
+		max-height: 600px;
+		/*width: 90%;*/
+		overflow:hidden;	
+		
+		margin-top: 0.5em;
+
+		position: relative;
+		z-index: 1;
+	}
+
+	.img-fluid{
+		max-width: 5000px;
+		top: 30em;
+	}
+}
+
+@media (min-width: 1380px) {
+
+}
+

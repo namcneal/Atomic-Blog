@@ -16,42 +16,63 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral&display=swap" rel="stylesheet">
 
     <!-- Hover effects -->
     <link href="{% static 'css/hover-min.css' %}" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    <!-- Search bar effects and relevant JS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/searchbox.css' %}">
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- My own CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/list_style.css' %}">
 
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-xl navbar-custom sticky-top pt-2">
-        <div class="d-flex flex-nowrap pb-2 brand">
-            <a class="navbar-brand" href="/"><img id="logo" src="{% static 'images/Logo v6.png' %}"></a>
+    <nav class="navbar navbar-expand-xl navbar-dark navbar-custom sticky-top">
 
-            <button class="navbar-toggler navbar-dark ml-auto" type="button" data-toggle="collapse" data-target="#navbar-items" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- The logo and blog name go in this div -->
+        <a class="navbar-brand" href="/">
+            <img id="logo" src="{% static 'images/Logo v7.png' %}">
+            <span class="">one | one thirty-seven</span>
+        </a>
+
+        <!-- The collapse hamburger button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-items" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- The supported content that will be collapsable -->
+        <div class="collapse navbar-collapse" id="navbar-items">
+            <div class="navbar-nav ml-auto">
+
+                <!-- <div class="nav-links col"> -->
+                <a id="ph" class="nav-item nav-link hvr-shutter-out-vertical " href="/phys/">Physics</a>
+                <a id="ma" class="nav-item nav-link hvr-shutter-out-vertical " href="/math/">Math</a>
+                <a id="pr" class="nav-item nav-link hvr-shutter-out-vertical " href="/prog/">Programming</a>
+                <a id="pr" class="nav-item nav-link hvr-shutter-out-vertical " href="/prog/">Other</a>
+
+               <div class="flexbox">
+                <div class="search">
+                    <div>
+                      <input type="text" placeholder="Search . . ." required>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbar-items">
-            <div class="navbar-nav">
-                <a id="ho" class="nav-item nav-link hvr-shutter-out-vertical active" href="/">Home</a>
-                <a id="ph" class="nav-item nav-link hvr-shutter-out-vertical " href="#">Physics</a>
-                <a id="ma" class="nav-item nav-link hvr-shutter-out-vertical " href="#">Math</a>
-                <a id="pr" class="nav-item nav-link hvr-shutter-out-vertical " href="#">Programming</a>
-                <a id="ab" class="nav-item nav-link hvr-shutter-out-vertical " href="#">About</a>
-            </div>
-
-            <div class="row justify-content-center">
-                <form class="form-inline my-lg-0 ">
-                    <input class="form-control bg-transparent no-border" type="search" placeholder="Search posts" aria-label="Search">
-                </form>
-                <button class="btn btn-outline-secondary no-border" type="button"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
     </nav>
 
     {% block content %}
