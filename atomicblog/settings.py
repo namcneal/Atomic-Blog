@@ -26,7 +26,7 @@ SECRET_KEY = '(2=1$5p$o@=#&44p=n3ibpb#-xvhm=h24^*%_dwos!b(d0t%*0'
 DEBUG = False
 
 if not DEBUG:
-	ALLOWED_HOSTS = ["atomicblog.herokuapp.com"]
+	ALLOWED_HOSTS = ["*herokuapp.com"]
 else:
     ALLOWED_HOSTS = []
 
