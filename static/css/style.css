@@ -74,6 +74,11 @@ body{
 		background: #b77d5c;
 	}
 
+/* The progress bar */
+#_progress {
+	/*position: absolute;*/
+	bottom: 0;
+}	
 
 /*************** Allowing the Navbar to slide up and down***************/
 .navbar {
@@ -82,64 +87,6 @@ body{
 .navbar-hide {
     top: -70px;
 }
-
-/******************** Homepage **********************/
-
-#featured-article{
-	position: relative;
-	width: 100%;
-	height: auto;
-	overflow:hidden;	
-}
-
-.img-fluid{
-	width: 100%;
-	/*max-width: 1200px;*/
-}
-
-.text-overlay{
-	position:absolute;
-	top:0;
-	left: 25%;
-
-	background-color: rgba(0, 0, 0,0.5);
-	margin: 0 auto;
-
-	text-align: left;
-	text-decoration: none;
-	font-size: 1.8em;
-	font-family: 'Sawarabi Mincho', serif;
-	color: white;
-}
-
-#main-article-link:hover{
-	text-decoration: none;
-}
-
-
-/************************* Styling posts ***************************/
-#title, #hook{
-	text-align: center;
-	font-family: 'Sawarabi Mincho', serif;
-}
-
-#hook{
-	width:60%;
-	margin: 0 auto;
-	color: #003366;
-}
-
-#text{
-	width: 90%;
-	margin: 0 auto;
-
-	font-size: 16x;
-	line-height: 150%;
-	font-family: 'Spectral', serif;
-	font-weight: 500;
-	text-align: justify;
-}
-
 
 /******************* Media Queries for Larger Screens *****************/
 /*Extra small devices (portrait phones, less than 576px)
@@ -219,25 +166,6 @@ No media query since this is the default in Bootstrap*/
 		font-size: 1.6em;
 	}
 
-
-	/* Center the image and shrink it from 100% */
-	/* Also detach it from the navbar */
-	#featured-article{
-		margin: 0 auto;
-		max-height: 600px;
-		/*width: 90%;*/
-		overflow:hidden;	
-		
-		margin-top: 0.5em;
-
-		position: relative;
-		z-index: 1;
-	}
-
-	.img-fluid{
-		max-width: 5000px;
-		top: 30em;
-	}
 }
 
 @media (min-width: 1380px) {

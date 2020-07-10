@@ -14,10 +14,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Spectral&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
 
     <!-- Hover effects -->
     <link href="{% static 'css/hover-min.css' %}" rel="stylesheet">
@@ -33,6 +34,7 @@
     <!-- My own CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/list_style.css' %}">
 
   </head>
@@ -44,7 +46,7 @@
         <!-- The logo and blog name go in this div -->
         <a class="navbar-brand" href="/">
             <img id="logo" src="{% static 'images/Logo v7.png' %}">
-            <span class="">one | one thirty-seven</span>
+            <span class="">one | one thirty-seven<sup>α</sup></span>
         </a>
 
         <!-- The collapse hamburger button -->
@@ -73,6 +75,9 @@
             </div>
         </div>
 
+        <!-- The progress bar is not visible except on article pages. The styling is in article.css and it's controlled by JS-->
+        <div id="_progress"></div>
+
     </nav>
 
     {% block content %}
@@ -87,5 +92,6 @@
     <!-- TODO -->
     <!-- Rework this script so that the header goes down on all pages, not just those with articles-->
     <script src= "{% static 'js/navbar-dropup.js' %}"></script>
+    <script src= "{% static 'js/progress_bar.js' %}"></script>
   </body>
 </html>
